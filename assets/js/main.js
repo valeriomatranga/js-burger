@@ -53,7 +53,6 @@ document.querySelector('button').addEventListener('click', function () {
     console.log(sommaIngredienti);
 
     var prezzoTotale = prezzo_iniziale  + sommaIngredienti;
-    console.log(prezzoTotale);
 
     //Codici sconto e calcolo prezzo finale scontatato
     var codiceSconto = [
@@ -61,14 +60,15 @@ document.querySelector('button').addEventListener('click', function () {
         ['olivia',"4"],
         ["popeye","2"]
     ];
-
+    var codice = codiceSconto;
     var codiceInserito = document.querySelector('#coupon');
 
     for(i = 0; i < codiceSconto.length; i++){
 
         if(codiceSconto[i][0] === codiceInserito){
-            prezzoTotale - 
+            prezzoTotale = prezzoTotale - Number(codice.getAttribute('data-price'));
         }
     }
+    console.log(prezzoTotale);
 
 });

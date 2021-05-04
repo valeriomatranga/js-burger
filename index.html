@@ -12,29 +12,38 @@
   </head>
   <body>
       <!-- site-header -->
-      <header>
-          <h1>Create Your Burger</h1>
-      </header>
+      <div class="container">
 
-      <!-- site main -->
-      <main>
-          <form action="your_burger">
-            <input id="name_burger" type="text" placeholder="Name Your Burger">
-          </form>
-        <h5>Ingredients</h5>
-
-        <section class="ingredient">
-
-        </section>
-        <input id="coupon" type="text" placeholder="Inserisci qui il tuo codice">
-
-        <button>calculate</button>
-      </main>
-
-      <!-- site footer -->
-      <footer>
-
-      </footer>
+          <header>
+              <h1>Create Your Burger</h1>
+              <img src="./assets/img/burger-top.png" alt="">
+            </header>
+            
+            <!-- site main -->
+            <main>
+                <form action="your_burger">
+                    <input id="name_burger" type="text" placeholder="Name Your Burger">
+                </form>
+                <h5>Ingredients</h5>
+                
+                <section class="ingredient">
+                    
+                </section>
+                <div class="discount">
+                    <span>Discount Coupon</span>
+                    <input id="coupon" type="text" placeholder="Inserisci qui il tuo codice">
+                </div>
+                <div class="d-flex justify-content-center mt-4">
+                    <button>calculate</button>
+                </div>
+            </main>
+            
+            <!-- site footer -->
+            <footer>
+                <span>Your Price</span>
+                <span id="totale"></span>
+            </footer>
+        </div>
       <script src="./assets/js/main.js"></script>
   </body>
 </html>

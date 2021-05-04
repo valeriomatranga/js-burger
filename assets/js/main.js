@@ -16,8 +16,8 @@ function generateElement(list,el){
 
         el.insertAdjacentHTML("beforeend",
         `
-            <div class="form_ element">
-                <img width="30" src="./assets/img/${list[i][0] + '.svg'}">
+            <div class="form_element col-6">
+                <img width="40" src="./assets/img/${list[i][0] + '.svg'}">
                 <label for="${list[i][0]}">${list[i][0]}</label>
                 <input type="checkbox" name="${list[i][0]}" id="${list[i][0]}" data-price="${list[i][1]}">
             </div>
@@ -70,5 +70,5 @@ document.querySelector('button').addEventListener('click', function () {
         }
     }
     console.log(prezzoTotale);
-
+    document.getElementById('totale').innerHTML = "$ " + prezzoTotale;
 });

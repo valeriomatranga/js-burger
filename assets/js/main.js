@@ -68,12 +68,10 @@ document.querySelector('button').addEventListener('click', function () {
         var codice = codiceSconto[i];
 
         if(codice.includes (codiceInserito.value)){
-            codice = codiceInserito;
-            document.getElementById('totale').innerHTML = "$ " + (prezzoTotale - codice[1]);
+            prezzoTotale = prezzoTotale - codice[1];
             console.log("sconto applicato" + codice);
-        }else{
-            document.getElementById('totale').innerHTML = "$ " + prezzoTotale;
         }
     }
-
+    
+    document.getElementById('totale').innerHTML = "$ " + prezzoTotale;
 });

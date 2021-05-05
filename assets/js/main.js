@@ -56,19 +56,24 @@ document.querySelector('button').addEventListener('click', function () {
 
     //Codici sconto e calcolo prezzo finale scontatato
     var codiceSconto = [
-        ["poldo",".5"],
-        ['olivia',"4"],
-        ["popeye","2"]
+        ["poldo", 0.5],
+        ['olivia', 4],
+        ["popeye", 2]
     ];
-    var codice = codiceSconto;
+
     var codiceInserito = document.querySelector('#coupon');
-
+    
     for(i = 0; i < codiceSconto.length; i++){
+        
+        var codice = codiceSconto[i];
 
-        if(codiceSconto[i][0] === codiceInserito){
-            prezzoTotale = prezzoTotale - Number(codice.getAttribute('data-price'));
+        if(codice.includes (codiceInserito.value)){
+            codice = codiceInserito;
+            document.getElementById('totale').innerHTML = "$ " + (prezzoTotale - codice[1]);
+            console.log("sconto applicato" + codice);
+        }else{
+            document.getElementById('totale').innerHTML = "$ " + prezzoTotale;
         }
     }
-    console.log(prezzoTotale);
-    document.getElementById('totale').innerHTML = "$ " + prezzoTotale;
+
 });
